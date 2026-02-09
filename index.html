@@ -15,9 +15,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <!-- Google Fonts: preload + non-blocking load -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"></noscript>
 
   <!-- Inline theme init to prevent FOUC -->
   <script>
@@ -29,13 +31,8 @@
     })();
   </script>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Single bundled stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <!-- Skip to content -->
@@ -70,7 +67,7 @@
 
   <!-- Mobile Navigation Drawer -->
   <div class="nav-drawer-scrim" id="nav-scrim" aria-hidden="true"></div>
-  <aside class="nav-drawer" id="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <aside class="nav-drawer" id="mobile-nav" role="dialog" aria-label="Navigation menu">
     <div class="nav-drawer__header">
       <span class="md-title-medium">Menu</span>
       <button class="md-icon-button nav-drawer__close" aria-label="Close navigation menu">
@@ -682,11 +679,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/theme.js"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/contact.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Single bundled script, deferred to not block rendering -->
+  <script src="js/app.js" defer></script>
 </body>
 </html>
