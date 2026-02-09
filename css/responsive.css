@@ -1,0 +1,257 @@
+/* ============================================
+   Responsive / Adaptive Styles
+   MD3 Breakpoints: Compact < 600, Medium 600-904, Expanded 905+
+   ============================================ */
+
+/* ----- Compact (Mobile): 0 - 599px ----- */
+
+@media (max-width: 599px) {
+  .page-container {
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: 56px 0;
+    scroll-margin-top: 64px;
+  }
+
+  .section-title {
+    margin-bottom: 32px;
+  }
+
+  .section-intro {
+    margin-bottom: 32px;
+  }
+
+  /* Navigation */
+  .top-app-bar__nav-links {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Hero */
+  .hero-section {
+    min-height: 85vh;
+    padding: 72px 16px 40px;
+  }
+
+  .hero-name {
+    font-size: var(--md-sys-typescale-display-small-size);
+    line-height: var(--md-sys-typescale-display-small-line-height);
+  }
+
+  .hero-role {
+    font-size: var(--md-sys-typescale-headline-small-size);
+    line-height: var(--md-sys-typescale-headline-small-line-height);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-actions .md-button-filled,
+  .hero-actions .md-button-outlined {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-photo {
+    justify-content: center;
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .skill-bar-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .skill-name {
+    min-width: unset;
+  }
+
+  /* Experience */
+  .timeline {
+    padding-left: 28px;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .timeline-dot {
+    left: -28px;
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .timeline-card {
+    padding: 16px;
+  }
+
+  /* Philosophy */
+  .quotes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-card {
+    padding: 20px;
+  }
+
+  .quote-text {
+    font-size: var(--md-sys-typescale-body-large-size);
+    line-height: var(--md-sys-typescale-body-large-line-height);
+  }
+
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-submit {
+    width: 100%;
+  }
+
+  /* Publication */
+  .publication-callout {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .publication-link {
+    margin-left: 0;
+  }
+
+  /* Footer */
+  .footer-nav {
+    gap: 16px;
+  }
+}
+
+/* ----- Medium (Tablet): 600 - 904px ----- */
+
+@media (min-width: 600px) and (max-width: 904px) {
+  .section {
+    scroll-margin-top: 64px;
+  }
+
+  /* Navigation */
+  .top-app-bar__nav-links {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Hero */
+  .hero-name {
+    font-size: var(--md-sys-typescale-display-medium-size);
+    line-height: var(--md-sys-typescale-display-medium-line-height);
+  }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-photo {
+    justify-content: center;
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* Philosophy */
+  .quotes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ----- Expanded (Desktop): 905px+ ----- */
+
+@media (min-width: 905px) {
+  /* Show desktop nav, hide hamburger */
+  .top-app-bar__nav-links {
+    display: flex;
+  }
+
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  /* Experience: alternate timeline */
+  .timeline {
+    padding-left: 0;
+    max-width: 960px;
+  }
+
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 50%;
+    padding-right: 40px;
+  }
+
+  .timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-right: 0;
+    padding-left: 40px;
+  }
+
+  .timeline-dot {
+    left: auto;
+    right: -8px;
+    top: 28px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-dot {
+    right: auto;
+    left: -8px;
+  }
+}
+
+/* ----- Large (Wide Desktop): 1240px+ ----- */
+
+@media (min-width: 1240px) {
+  .page-container {
+    padding: 0 32px;
+  }
+}

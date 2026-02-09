@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" data-scheme="green" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karlo Vrbic | Senior Android Developer</title>
+  <meta name="description" content="Senior Android Developer based in Zagreb, Croatia. Specializing in Kotlin, Jetpack Compose, and clean architecture. Available for freelance projects.">
+  <meta property="og:title" content="Karlo Vrbic | Senior Android Developer">
+  <meta property="og:description" content="Senior Android Developer specializing in Kotlin, Jetpack Compose, and clean architecture. Available for freelance projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vrbic.dev">
+  <meta name="theme-color" content="#006D3B">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- Inline theme init to prevent FOUC -->
+  <script>
+    (function() {
+      var scheme = localStorage.getItem('color-scheme') || 'green';
+      var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-scheme', scheme);
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Skip to content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="top-app-bar" role="banner">
+    <nav class="top-app-bar__content page-container" aria-label="Main navigation">
+      <a href="#hero" class="top-app-bar__brand md-title-large">Karlo Vrbic</a>
+
+      <ul class="top-app-bar__nav-links md-label-large" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="top-app-bar__actions">
+        <button class="md-icon-button" id="scheme-toggle" aria-label="Change color scheme" title="Change color scheme">
+          <span class="material-symbols-outlined">palette</span>
+        </button>
+        <button class="md-icon-button" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="material-symbols-outlined">dark_mode</span>
+        </button>
+        <button class="md-icon-button mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="nav-drawer-scrim" id="nav-scrim" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+    <div class="nav-drawer__header">
+      <span class="md-title-medium">Menu</span>
+      <button class="md-icon-button nav-drawer__close" aria-label="Close navigation menu">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="nav-drawer__links" aria-label="Mobile navigation">
+      <a href="#about" class="nav-drawer__link md-label-large">
+        <span class="material-symbols-outlined" aria-hidden="true">person</span>
+        About
+      </a>
+      <a href="#skills" class="nav-drawer__link md-label-large">
+        <span class="material-symbols-outlined" aria-hidden="true">code</span>
+        Skills
+      </a>
+      <a href="#experience" class="nav-drawer__link md-label-large">
+        <span class="material-symbols-outlined" aria-hidden="true">work</span>
+        Experience
+      </a>
+      <a href="#philosophy" class="nav-drawer__link md-label-large">
+        <span class="material-symbols-outlined" aria-hidden="true">format_quote</span>
+        Philosophy
+      </a>
+      <a href="#contact" class="nav-drawer__link md-label-large">
+        <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+        Contact
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main id="main-content">
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content page-container">
+        <p class="hero-greeting md-title-large">Hello, I am</p>
+        <h1 class="hero-name md-display-large">Karlo Vrbic</h1>
+        <p class="hero-role md-headline-medium">Senior Android Developer</p>
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span class="md-label-large">Available for Freelance</span>
+        </div>
+        <p class="hero-location md-body-large">
+          <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+          Zagreb, Croatia
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="md-button-filled">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+            Get in Touch
+          </a>
+          <a href="#experience" class="md-button-outlined">
+            <span class="material-symbols-outlined" aria-hidden="true">work</span>
+            View My Work
+          </a>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="material-symbols-outlined">expand_more</span>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section about-section">
+      <div class="page-container">
+        <h2 class="section-title md-headline-large animate-fade-up">About Me</h2>
+        <div class="about-grid">
+          <div class="about-photo animate-fade-up">
+            <img src="assets/profile.jpg" alt="Karlo Vrbic - Senior Android Developer" class="profile-photo" loading="lazy">
+          </div>
+          <div class="about-content animate-fade-up">
+            <p class="md-body-large about-bio">
+              I am a Senior Android Developer with over 8 years of experience building mobile applications
+              that people actually enjoy using. When I am not crafting high-quality Kotlin code, you will
+              find me reading about the latest Android developments, creating presentations for my team,
+              or finding new ways to improve our development processes. I genuinely believe that great
+              software comes from great teams -- and great teams have fun doing what they do.
+            </p>
+            <p class="md-body-large about-bio">
+              My superpower? Making complex technical problems approachable and getting everyone excited
+              about solving them together. Some call it enthusiasm. My coworkers call it "that energy
+              before the first coffee that somehow never goes away."
+            </p>
+
+            <div class="about-goals">
+              <h3 class="md-title-medium about-goals-title">What Drives Me</h3>
+              <ul class="goals-list" role="list">
+                <li class="goal-item animate-fade-up">
+                  <span class="material-symbols-outlined goal-icon" aria-hidden="true">rocket_launch</span>
+                  <div>
+                    <strong>Fun Projects, Serious Results</strong>
+                    <p class="md-body-medium">Looking for opportunities to build exciting products and improve development processes while keeping things enjoyable for everyone involved.</p>
+                  </div>
+                </li>
+                <li class="goal-item animate-fade-up">
+                  <span class="material-symbols-outlined goal-icon" aria-hidden="true">school</span>
+                  <div>
+                    <strong>Teaching &amp; Learning</strong>
+                    <p class="md-body-medium">Passionate about sharing knowledge with coworkers and learning from their fresh ideas and perspectives.</p>
+                  </div>
+                </li>
+                <li class="goal-item animate-fade-up">
+                  <span class="material-symbols-outlined goal-icon" aria-hidden="true">group</span>
+                  <div>
+                    <strong>People First</strong>
+                    <p class="md-body-medium">I enjoy connecting with people, exchanging ideas, and using every opportunity to grow professionally -- together.</p>
+                  </div>
+                </li>
+                <li class="goal-item animate-fade-up">
+                  <span class="material-symbols-outlined goal-icon" aria-hidden="true">psychology</span>
+                  <div>
+                    <strong>Thoughtful Execution</strong>
+                    <p class="md-body-medium">I value having the time to think ideas through carefully and execute tasks with the quality they deserve.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="about-socials">
+              <a href="https://linkedin.com/in/karlo-vrbic" target="_blank" rel="noopener noreferrer" class="social-link md-button-tonal" aria-label="LinkedIn Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://github.com/TheKarlo95" target="_blank" rel="noopener noreferrer" class="social-link md-button-tonal" aria-label="GitHub Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+                GitHub
+              </a>
+              <a href="https://gitlab.com/karlo-vrbic" target="_blank" rel="noopener noreferrer" class="social-link md-button-tonal" aria-label="GitLab Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m21.94 13.11-1.05-3.22-.01-.03-2.1-6.45a.47.47 0 0 0-.17-.22.5.5 0 0 0-.72.16.49.49 0 0 0-.05.2l-1.42 4.35H7.58L6.16 3.55a.49.49 0 0 0-.05-.2.5.5 0 0 0-.67-.18.47.47 0 0 0-.22.2L3.12 9.86l-.01.03-1.05 3.22a.72.72 0 0 0 .26.8L12 20.78l9.68-6.87a.72.72 0 0 0 .26-.8Z"/></svg>
+                GitLab
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="section skills-section">
+      <div class="page-container">
+        <h2 class="section-title md-headline-large animate-fade-up">Skills &amp; Expertise</h2>
+
+        <div class="skills-grid">
+          <!-- Technical Proficiency -->
+          <div class="skills-tech animate-fade-up">
+            <h3 class="md-title-medium skills-subtitle">Technical Proficiency</h3>
+            <div class="skill-bars">
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" aria-label="Kotlin: 5 out of 5">
+                <span class="skill-name md-body-medium">Kotlin</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" aria-label="Jetpack Compose: 5 out of 5">
+                <span class="skill-name md-body-medium">Jetpack Compose</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" aria-label="Design Patterns: 5 out of 5">
+                <span class="skill-name md-body-medium">Design Patterns</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" aria-label="Git: 5 out of 5">
+                <span class="skill-name md-body-medium">Git</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" aria-label="OOP Principles: 5 out of 5">
+                <span class="skill-name md-body-medium">OOP Principles</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" aria-label="Agile Development: 5 out of 5">
+                <span class="skill-name md-body-medium">Agile Development</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" aria-label="Java: 4 out of 5">
+                <span class="skill-name md-body-medium">Java</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" aria-label="Team Leading: 4 out of 5">
+                <span class="skill-name md-body-medium">Team Leading</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" aria-label="Testing: 4 out of 5">
+                <span class="skill-name md-body-medium">Testing</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span>
+                </div>
+              </div>
+              <div class="skill-bar-item" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" aria-label="Bluetooth Low Energy: 3 out of 5">
+                <span class="skill-name md-body-medium">Bluetooth Low Energy</span>
+                <div class="skill-dots">
+                  <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Soft Skills & Expertise -->
+          <div class="skills-soft animate-fade-up">
+            <h3 class="md-title-medium skills-subtitle">Core Strengths</h3>
+            <div class="chip-group">
+              <span class="md-chip">Android Development</span>
+              <span class="md-chip">Engineering</span>
+              <span class="md-chip">Teaching</span>
+              <span class="md-chip">Research</span>
+              <span class="md-chip">Collaboration</span>
+              <span class="md-chip">Problem Solving</span>
+              <span class="md-chip">Communication</span>
+            </div>
+
+            <h3 class="md-title-medium skills-subtitle skills-subtitle--spaced">Interests &amp; Expertise</h3>
+            <div class="chip-group chip-group--tertiary">
+              <span class="md-chip md-chip--tertiary">Agile Development</span>
+              <span class="md-chip md-chip--tertiary">Gradle</span>
+              <span class="md-chip md-chip--tertiary">Clean Architecture</span>
+              <span class="md-chip md-chip--tertiary">Decompose / RIBs</span>
+              <span class="md-chip md-chip--tertiary">Kotlin Multiplatform</span>
+              <span class="md-chip md-chip--tertiary">Project Management</span>
+              <span class="md-chip md-chip--tertiary">Team Lead</span>
+              <span class="md-chip md-chip--tertiary">Tech Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience" class="section experience-section">
+      <div class="page-container">
+        <h2 class="section-title md-headline-large animate-fade-up">Experience</h2>
+
+        <div class="timeline">
+          <!-- Elevien -->
+          <div class="timeline-item animate-fade-up">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card md-card-elevated">
+              <div class="timeline-card__header">
+                <h3 class="md-title-large">Elevien</h3>
+                <span class="timeline-role md-title-medium">Senior Android Developer</span>
+                <span class="timeline-meta md-label-medium">
+                  <time datetime="2024-03">Mar 2024</time> &ndash; <time datetime="2024-09">Sep 2024</time>
+                  &middot; Zagreb, Croatia
+                </span>
+              </div>
+              <p class="md-body-large timeline-desc">
+                Built a Kotlin Multiplatform application with AppSync integration for real-time data
+                synchronization in a gymnastics competition scoring system. Contributed to planning
+                and development across the entire product lifecycle -- because even gymnasts need
+                someone to handle the perfect 10s in code.
+              </p>
+              <div class="chip-group chip-group--small">
+                <span class="md-chip md-chip--small">Kotlin Multiplatform</span>
+                <span class="md-chip md-chip--small">AppSync</span>
+                <span class="md-chip md-chip--small">Best Practices</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cinnamon -->
+          <div class="timeline-item animate-fade-up">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card md-card-elevated">
+              <div class="timeline-card__header">
+                <h3 class="md-title-large">Cinnamon</h3>
+                <span class="timeline-role md-title-medium">Senior Android Developer</span>
+                <span class="timeline-meta md-label-medium">
+                  <time datetime="2023-03">Mar 2023</time> &ndash; <time datetime="2024-03">Mar 2024</time>
+                  &middot; Zagreb, Croatia
+                </span>
+              </div>
+              <p class="md-body-large timeline-desc">
+                Developed a BLE-powered Android application at this digital agency, handling feature
+                development, maintenance, and close collaboration with cross-functional teams. Turned
+                Bluetooth Low Energy into Bluetooth High Performance -- one byte at a time.
+              </p>
+              <div class="chip-group chip-group--small">
+                <span class="md-chip md-chip--small">BLE</span>
+                <span class="md-chip md-chip--small">Android</span>
+                <span class="md-chip md-chip--small">Team Collaboration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Azikus -->
+          <div class="timeline-item animate-fade-up">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card md-card-elevated">
+              <div class="timeline-card__header">
+                <h3 class="md-title-large">Azikus</h3>
+                <span class="timeline-role md-title-medium">Senior Android Developer</span>
+                <span class="timeline-meta md-label-medium">
+                  <time datetime="2020-07">Jul 2020</time> &ndash; <time datetime="2023-03">Mar 2023</time>
+                  &middot; Zagreb, Croatia
+                </span>
+              </div>
+              <p class="md-body-large timeline-desc">
+                Led mobile app development while mentoring junior developers and improving
+                development processes. The place where I discovered that teaching others is the
+                best way to learn -- and that code reviews can actually be fun.
+              </p>
+              <div class="chip-group chip-group--small">
+                <span class="md-chip md-chip--small">Mentoring</span>
+                <span class="md-chip md-chip--small">Process Improvement</span>
+                <span class="md-chip md-chip--small">Mobile Apps</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- OpenDynamic -->
+          <div class="timeline-item animate-fade-up">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card md-card-elevated">
+              <div class="timeline-card__header">
+                <h3 class="md-title-large">OpenDynamic</h3>
+                <span class="timeline-role md-title-medium">Android Developer</span>
+                <span class="timeline-meta md-label-medium">
+                  <time datetime="2019-09">Sep 2019</time> &ndash; <time datetime="2020-07">Jul 2020</time>
+                  &middot; Remote, Germany
+                </span>
+              </div>
+              <p class="md-body-large timeline-desc">
+                Built a mobile ERP application for warehouse order scanning and tracking as a freelance
+                remote developer. Proved that enterprise software does not have to look like it was
+                designed in 2005.
+              </p>
+              <div class="chip-group chip-group--small">
+                <span class="md-chip md-chip--small">Freelance</span>
+                <span class="md-chip md-chip--small">ERP</span>
+                <span class="md-chip md-chip--small">Remote</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Undabot -->
+          <div class="timeline-item animate-fade-up">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card md-card-elevated">
+              <div class="timeline-card__header">
+                <h3 class="md-title-large">Undabot</h3>
+                <span class="timeline-role md-title-medium">Android Developer</span>
+                <span class="timeline-meta md-label-medium">
+                  <time datetime="2018-09">Sep 2018</time> &ndash; <time datetime="2019-12">Dec 2019</time>
+                  &middot; Zagreb, Croatia
+                </span>
+              </div>
+              <p class="md-body-large timeline-desc">
+                Contributed to the A1 telecommunications app, the FOREO beauty tech app, and built
+                a reusable standalone messenger library. Three completely different domains, one
+                common thread: Kotlin.
+              </p>
+              <div class="chip-group chip-group--small">
+                <span class="md-chip md-chip--small">A1</span>
+                <span class="md-chip md-chip--small">FOREO</span>
+                <span class="md-chip md-chip--small">Messenger SDK</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Combis -->
+          <div class="timeline-item animate-fade-up">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card md-card-elevated">
+              <div class="timeline-card__header">
+                <h3 class="md-title-large">Combis</h3>
+                <span class="timeline-role md-title-medium">Mobile Cross-Platform Developer</span>
+                <span class="timeline-meta md-label-medium">
+                  <time datetime="2017-05">May 2017</time> &ndash; <time datetime="2018-09">Sep 2018</time>
+                  &middot; Zagreb, Croatia
+                </span>
+              </div>
+              <p class="md-body-large timeline-desc">
+                Worked with Ionic, Cordova, Angular, and Kotlin for cross-platform and native
+                mobile development. The cross-platform era that taught me why native Android
+                is where I truly belong.
+              </p>
+              <div class="chip-group chip-group--small">
+                <span class="md-chip md-chip--small">Ionic</span>
+                <span class="md-chip md-chip--small">Angular</span>
+                <span class="md-chip md-chip--small">Kotlin</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Asseco SEE -->
+          <div class="timeline-item animate-fade-up">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card md-card-elevated">
+              <div class="timeline-card__header">
+                <h3 class="md-title-large">Asseco SEE</h3>
+                <span class="timeline-role md-title-medium">Android Developer</span>
+                <span class="timeline-meta md-label-medium">
+                  <time datetime="2017-01">Jan 2017</time> &ndash; <time datetime="2017-04">Apr 2017</time>
+                  &middot; Zagreb, Croatia
+                </span>
+              </div>
+              <p class="md-body-large timeline-desc">
+                Developed the Unicredit banking application, handling feature development and bug
+                fixing across multiple modules and flavors. Where every bug fix was treated with
+                the gravity of a financial transaction -- because it literally was one.
+              </p>
+              <div class="chip-group chip-group--small">
+                <span class="md-chip md-chip--small">Banking</span>
+                <span class="md-chip md-chip--small">Java</span>
+                <span class="md-chip md-chip--small">Multi-module</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Publication -->
+        <div class="publication-callout animate-fade-up">
+          <span class="material-symbols-outlined publication-icon" aria-hidden="true">article</span>
+          <div>
+            <p class="md-title-medium">Published on Medium</p>
+            <p class="md-body-medium">"Android &mdash; How to handle taps?" &middot; January 2021</p>
+          </div>
+          <a href="https://medium.com/@vrbic.karlo" target="_blank" rel="noopener noreferrer" class="md-button-tonal publication-link">
+            Read Article
+            <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PHILOSOPHY ==================== -->
+    <section id="philosophy" class="section philosophy-section">
+      <div class="page-container">
+        <h2 class="section-title md-headline-large animate-fade-up">Philosophy</h2>
+        <p class="section-intro md-body-large animate-fade-up">
+          Here are some thoughts that guide my actions as a software engineer and Android developer.
+        </p>
+
+        <div class="quotes-grid">
+          <blockquote class="quote-card md-card-outlined animate-fade-up">
+            <span class="material-symbols-outlined quote-icon" aria-hidden="true">format_quote</span>
+            <p class="md-title-large quote-text">
+              Any fool can write code that a computer can understand. Good programmers write code
+              that humans can understand.
+            </p>
+            <cite class="md-label-large quote-author">&mdash; Martin Fowler</cite>
+          </blockquote>
+
+          <blockquote class="quote-card md-card-outlined animate-fade-up">
+            <span class="material-symbols-outlined quote-icon" aria-hidden="true">format_quote</span>
+            <p class="md-title-large quote-text">
+              Good programmers use their brains, but good guidelines save us having to think out
+              every case.
+            </p>
+            <cite class="md-label-large quote-author">&mdash; Francis Glassborow</cite>
+          </blockquote>
+
+          <blockquote class="quote-card md-card-outlined animate-fade-up">
+            <span class="material-symbols-outlined quote-icon" aria-hidden="true">format_quote</span>
+            <p class="md-title-large quote-text">
+              Software and cathedrals are much the same; first we build them, then we pray.
+            </p>
+            <cite class="md-label-large quote-author">&mdash; Anonymous</cite>
+          </blockquote>
+
+          <blockquote class="quote-card md-card-outlined animate-fade-up">
+            <span class="material-symbols-outlined quote-icon" aria-hidden="true">format_quote</span>
+            <p class="md-title-large quote-text">
+              Android development is a challenging but rewarding career. If you are passionate about
+              building great software, then Android development is a great option for you.
+            </p>
+            <cite class="md-label-large quote-author">&mdash; Jake Wharton</cite>
+          </blockquote>
+
+          <blockquote class="quote-card quote-card--personal md-card-filled animate-fade-up">
+            <span class="material-symbols-outlined quote-icon" aria-hidden="true">format_quote</span>
+            <p class="md-title-large quote-text">
+              <em>*Grrhh*</em> Who wrote this? <em>*looks up git blame*</em>
+              <em>*finds out it was me months ago*</em> It is okay I guess.
+            </p>
+            <cite class="md-label-large quote-author">&mdash; Me (ha ha)</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section contact-section">
+      <div class="page-container">
+        <h2 class="section-title md-headline-large animate-fade-up">Get in Touch</h2>
+
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper animate-fade-up">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="md-text-field">
+                <input type="text" id="contact-name" name="name" required placeholder=" " autocomplete="name">
+                <label for="contact-name">Your Name</label>
+                <span class="field-error" role="alert"></span>
+              </div>
+
+              <div class="md-text-field">
+                <input type="email" id="contact-email" name="email" required placeholder=" " autocomplete="email">
+                <label for="contact-email">Email Address</label>
+                <span class="field-error" role="alert"></span>
+              </div>
+
+              <div class="md-text-field">
+                <input type="text" id="contact-subject" name="subject" required placeholder=" ">
+                <label for="contact-subject">Subject</label>
+                <span class="field-error" role="alert"></span>
+              </div>
+
+              <div class="md-text-field">
+                <textarea id="contact-message" name="message" required rows="5" placeholder=" "></textarea>
+                <label for="contact-message">Message</label>
+                <span class="field-error" role="alert"></span>
+              </div>
+
+              <button type="submit" class="md-button-filled contact-submit">
+                <span class="material-symbols-outlined" aria-hidden="true">send</span>
+                Send Message
+              </button>
+              <p class="md-body-small contact-hint">This will open your email client with the message pre-filled.</p>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info animate-fade-up">
+            <h3 class="md-headline-small contact-info-title">Let's Connect</h3>
+            <p class="md-body-large contact-info-desc">
+              Whether you have a project in mind, want to discuss Android development, or just want
+              to debate whether Jetpack Compose is better than XML layouts (spoiler: it is),
+              I would love to hear from you.
+            </p>
+
+            <address class="contact-details">
+              <a href="mailto:vrbic.karlo@gmail.com" class="contact-detail-item">
+                <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+                <span class="md-body-large">vrbic.karlo@gmail.com</span>
+              </a>
+              <a href="tel:+385958569156" class="contact-detail-item">
+                <span class="material-symbols-outlined" aria-hidden="true">phone</span>
+                <span class="md-body-large">+385 95 856 9156</span>
+              </a>
+              <div class="contact-detail-item">
+                <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+                <span class="md-body-large">Zagreb, Croatia</span>
+              </div>
+            </address>
+
+            <div class="contact-socials">
+              <a href="https://linkedin.com/in/karlo-vrbic" target="_blank" rel="noopener noreferrer" class="social-link md-button-outlined" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://github.com/TheKarlo95" target="_blank" rel="noopener noreferrer" class="social-link md-button-outlined" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+                GitHub
+              </a>
+              <a href="https://gitlab.com/karlo-vrbic" target="_blank" rel="noopener noreferrer" class="social-link md-button-outlined" aria-label="GitLab">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m21.94 13.11-1.05-3.22-.01-.03-2.1-6.45a.47.47 0 0 0-.17-.22.5.5 0 0 0-.72.16.49.49 0 0 0-.05.2l-1.42 4.35H7.58L6.16 3.55a.49.49 0 0 0-.05-.2.5.5 0 0 0-.67-.18.47.47 0 0 0-.22.2L3.12 9.86l-.01.03-1.05 3.22a.72.72 0 0 0 .26.8L12 20.78l9.68-6.87a.72.72 0 0 0 .26-.8Z"/></svg>
+                GitLab
+              </a>
+            </div>
+
+            <div class="contact-languages">
+              <p class="md-label-large">Languages</p>
+              <p class="md-body-medium">English (working knowledge) &middot; Croatian (mother tongue)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="page-container footer-content">
+      <div class="footer-nav">
+        <a href="#about" class="md-label-large">About</a>
+        <a href="#skills" class="md-label-large">Skills</a>
+        <a href="#experience" class="md-label-large">Experience</a>
+        <a href="#philosophy" class="md-label-large">Philosophy</a>
+        <a href="#contact" class="md-label-large">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/karlo-vrbic" target="_blank" rel="noopener noreferrer" class="md-icon-button" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+        </a>
+        <a href="https://github.com/TheKarlo95" target="_blank" rel="noopener noreferrer" class="md-icon-button" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+        </a>
+        <a href="https://gitlab.com/karlo-vrbic" target="_blank" rel="noopener noreferrer" class="md-icon-button" aria-label="GitLab">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m21.94 13.11-1.05-3.22-.01-.03-2.1-6.45a.47.47 0 0 0-.17-.22.5.5 0 0 0-.72.16.49.49 0 0 0-.05.2l-1.42 4.35H7.58L6.16 3.55a.49.49 0 0 0-.05-.2.5.5 0 0 0-.67-.18.47.47 0 0 0-.22.2L3.12 9.86l-.01.03-1.05 3.22a.72.72 0 0 0 .26.8L12 20.78l9.68-6.87a.72.72 0 0 0 .26-.8Z"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy md-body-small">
+        &copy; 2025 Karlo Vrbic. Built with clean code and zero frameworks.
+      </p>
+      <button class="md-button-text back-to-top" aria-label="Back to top">
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_upward</span>
+        Back to top
+      </button>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

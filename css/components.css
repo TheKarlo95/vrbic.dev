@@ -1,0 +1,495 @@
+/* ============================================
+   Material Design 3 - Component Styles
+   ============================================ */
+
+/* ----- Buttons ----- */
+
+.md-button-filled,
+.md-button-outlined,
+.md-button-text,
+.md-button-tonal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-family: var(--md-sys-typescale-font-family);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+              background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  white-space: nowrap;
+}
+
+.md-button-filled .material-symbols-outlined,
+.md-button-outlined .material-symbols-outlined,
+.md-button-text .material-symbols-outlined,
+.md-button-tonal .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* State layer */
+.md-button-filled::after,
+.md-button-outlined::after,
+.md-button-text::after,
+.md-button-tonal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+/* Filled Button */
+.md-button-filled {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.md-button-filled::after {
+  background-color: var(--md-sys-color-on-primary);
+}
+
+.md-button-filled:hover::after {
+  opacity: 0.08;
+}
+
+.md-button-filled:focus-visible::after {
+  opacity: 0.12;
+}
+
+.md-button-filled:active::after {
+  opacity: 0.12;
+}
+
+.md-button-filled:hover {
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+/* Outlined Button */
+.md-button-outlined {
+  background-color: transparent;
+  color: var(--md-sys-color-primary);
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.md-button-outlined::after {
+  background-color: var(--md-sys-color-primary);
+}
+
+.md-button-outlined:hover::after {
+  opacity: 0.08;
+}
+
+.md-button-outlined:focus-visible::after {
+  opacity: 0.12;
+}
+
+.md-button-outlined:active::after {
+  opacity: 0.12;
+}
+
+/* Text Button */
+.md-button-text {
+  background-color: transparent;
+  color: var(--md-sys-color-primary);
+  padding: 0 12px;
+}
+
+.md-button-text::after {
+  background-color: var(--md-sys-color-primary);
+}
+
+.md-button-text:hover::after {
+  opacity: 0.08;
+}
+
+.md-button-text:focus-visible::after {
+  opacity: 0.12;
+}
+
+/* Tonal Button */
+.md-button-tonal {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-button-tonal::after {
+  background-color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-button-tonal:hover::after {
+  opacity: 0.08;
+}
+
+.md-button-tonal:hover {
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+/* ----- Icon Button ----- */
+
+.md-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  position: relative;
+  overflow: hidden;
+  transition: color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.md-icon-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: var(--md-sys-color-on-surface-variant);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.md-icon-button:hover::after {
+  opacity: 0.08;
+}
+
+.md-icon-button:focus-visible::after {
+  opacity: 0.12;
+}
+
+.md-icon-button .material-symbols-outlined {
+  font-size: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.md-icon-button svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- Cards ----- */
+
+.md-card-elevated {
+  background-color: var(--md-sys-color-surface-container-low);
+  border-radius: var(--md-sys-shape-corner-medium);
+  box-shadow: var(--md-sys-elevation-1);
+  padding: 24px;
+  transition: box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+              background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.md-card-elevated:hover {
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.md-card-filled {
+  background-color: var(--md-sys-color-surface-container-highest);
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: 24px;
+  transition: background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.md-card-outlined {
+  background-color: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: 24px;
+  transition: background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
+              border-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+/* ----- Chips ----- */
+
+.md-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: var(--md-sys-shape-corner-small);
+  border: 1px solid var(--md-sys-color-outline);
+  background-color: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+              border-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
+              color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.md-chip--tertiary {
+  border-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-tertiary);
+  background-color: transparent;
+}
+
+.md-chip--small {
+  height: 26px;
+  padding: 0 10px;
+  font-size: var(--md-sys-typescale-label-medium-size);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-group--small {
+  gap: 6px;
+  margin-top: 12px;
+}
+
+/* ----- Text Fields (Outlined) ----- */
+
+.md-text-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.md-text-field input,
+.md-text-field textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background-color: transparent;
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  transition: border-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  outline: none;
+}
+
+.md-text-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.md-text-field label {
+  position: absolute;
+  left: 12px;
+  top: 16px;
+  padding: 0 4px;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-large-size);
+  background-color: var(--md-sys-color-surface);
+  pointer-events: none;
+  transition: top var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+              font-size var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+              color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.md-text-field input:focus + label,
+.md-text-field input:not(:placeholder-shown) + label,
+.md-text-field textarea:focus + label,
+.md-text-field textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: var(--md-sys-typescale-body-small-size);
+  color: var(--md-sys-color-primary);
+}
+
+.md-text-field input:focus,
+.md-text-field textarea:focus {
+  border-color: var(--md-sys-color-primary);
+  border-width: 2px;
+  padding: 15px;
+}
+
+.md-text-field input:focus + label,
+.md-text-field textarea:focus + label {
+  color: var(--md-sys-color-primary);
+}
+
+/* Error state */
+.md-text-field.error input,
+.md-text-field.error textarea {
+  border-color: var(--md-sys-color-error);
+}
+
+.md-text-field.error label {
+  color: var(--md-sys-color-error);
+}
+
+.field-error {
+  display: block;
+  font-size: var(--md-sys-typescale-body-small-size);
+  color: var(--md-sys-color-error);
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+/* ----- Top App Bar ----- */
+
+.top-app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--md-sys-color-surface);
+  transition: box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+              background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.top-app-bar.scrolled {
+  box-shadow: var(--md-sys-elevation-2);
+  background-color: var(--md-sys-color-surface-container);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.top-app-bar__content {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  gap: 8px;
+}
+
+.top-app-bar__brand {
+  color: var(--md-sys-color-primary);
+  font-weight: 500;
+  white-space: nowrap;
+  margin-right: auto;
+}
+
+.top-app-bar__nav-links {
+  display: flex;
+  gap: 4px;
+}
+
+.top-app-bar__nav-links .nav-link {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  position: relative;
+  overflow: hidden;
+  transition: color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.top-app-bar__nav-links .nav-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.top-app-bar__nav-links .nav-link:hover::after {
+  opacity: 0.08;
+}
+
+.top-app-bar__nav-links .nav-link.active {
+  color: var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-primary-container);
+}
+
+.top-app-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ----- Navigation Drawer ----- */
+
+.nav-drawer-scrim {
+  position: fixed;
+  inset: 0;
+  background-color: var(--md-sys-color-scrim);
+  opacity: 0;
+  z-index: 200;
+  pointer-events: none;
+  transition: opacity var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.nav-drawer-scrim.active {
+  opacity: 0.32;
+  pointer-events: auto;
+}
+
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background-color: var(--md-sys-color-surface-container);
+  z-index: 201;
+  transform: translateX(-100%);
+  transition: transform var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-drawer.open {
+  transform: translateX(0);
+}
+
+.nav-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.nav-drawer__links {
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-drawer__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 16px;
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-surface-variant);
+  transition: background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+              color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.nav-drawer__link:hover {
+  background-color: var(--md-sys-color-surface-container-highest);
+}
+
+.nav-drawer__link.active {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+/* ----- Divider ----- */
+
+.md-divider {
+  border: none;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+/* ----- Utility: mobile nav toggle hidden on desktop ----- */
+
+.mobile-nav-toggle {
+  display: none;
+}

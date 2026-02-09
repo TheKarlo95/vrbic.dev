@@ -1,0 +1,106 @@
+/* Modern CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 1000;
+  padding: 8px 16px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 500;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  outline: none;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
