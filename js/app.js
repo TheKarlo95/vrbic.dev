@@ -70,6 +70,7 @@
   'use strict';
   var drawer, scrim, menuToggle, closeBtn, navLinks, header;
   var sections = [], drawerLinks = [], lastFocusedElement = null;
+  var currentSectionId = null;
 
   function openDrawer() {
     lastFocusedElement = document.activeElement;
@@ -103,16 +104,12 @@
     if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
     else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
   }
-  function updateActiveSection() {
-    var scrollY = window.scrollY + 120;
-    for (var i = sections.length - 1; i >= 0; i--) {
-      if (sections[i].offsetTop <= scrollY) {
-        var id = '#' + sections[i].id;
-        navLinks.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === id); });
-        drawerLinks.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === id); });
-        break;
-      }
-    }
+  function setActiveSection(id) {
+    if (id === currentSectionId) return;
+    currentSectionId = id;
+    var href = '#' + id;
+    navLinks.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === href); });
+    drawerLinks.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === href); });
   }
   function updateHeaderElevation() {
     header.classList.toggle('scrolled', window.scrollY > 10);
@@ -134,9 +131,20 @@
       drawerLinks.forEach(function (link) { link.addEventListener('click', closeDrawer); });
       var backToTop = document.querySelector('.back-to-top');
       if (backToTop) backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-      window.addEventListener('scroll', function () { updateActiveSection(); updateHeaderElevation(); }, { passive: true });
-      updateActiveSection();
-      updateHeaderElevation();
+
+      // Use IntersectionObserver for active section tracking (no layout reads on scroll)
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+      sections.forEach(function (s) { sectionObserver.observe(s); });
+
+      // Header elevation only reads scrollY (no layout property), safe on scroll
+      window.addEventListener('scroll', updateHeaderElevation, { passive: true });
+      requestAnimationFrame(updateHeaderElevation);
     }
   };
 })();
@@ -225,8 +233,12 @@
 /* ==================== INIT ==================== */
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
+  // Theme init runs first (changes data attributes, no layout reads)
   if (window.themeManager) window.themeManager.init();
-  if (window.navigationManager) window.navigationManager.init();
-  if (window.animationsManager) window.animationsManager.init();
-  if (window.contactManager) window.contactManager.init();
+  // Defer modules that read layout to next frame, after styles settle
+  requestAnimationFrame(function () {
+    if (window.navigationManager) window.navigationManager.init();
+    if (window.animationsManager) window.animationsManager.init();
+    if (window.contactManager) window.contactManager.init();
+  });
 });
